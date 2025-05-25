@@ -1,14 +1,10 @@
 <?php
 header('Content-Type: application/json');
 
-$mysqli = new mysqli("localhost", "root", "", "home");
+include_once 'connection.php';
 
-if ($mysqli->connect_error) {
-    echo json_encode(["error" => "DB Connection failed"]);
-    exit();
-}
 if($_GET['Mode']==0){
-    $result = $mysqli->query("SELECT * FROM `values` WHERE Entity_ID=1 ORDER BY DateTime DESC LIMIT 1");
+    $result = $conn->query("SELECT * FROM `values` WHERE Entity_ID=1 ORDER BY DateTime DESC LIMIT 1");
 
     if ($row = $result->fetch_assoc()) {
         echo json_encode($row);
@@ -16,7 +12,7 @@ if($_GET['Mode']==0){
         echo json_encode(["error" => "No data found"]);
     }
 }else if($_GET['Mode']==1){
-    $result = $mysqli->query("SELECT * FROM `values` WHERE Entity_ID=1 ORDER BY DateTime");
+    $result = $conn->query("SELECT * FROM `values` WHERE Entity_ID=1 ORDER BY DateTime");
     $temperatures = [];
     $time = [];
     $CalculateValues=[];
