@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Room</title>
+    <link rel="stylesheet" href="Style/style.css?t=99">
+    <link rel="manifest" href="manifest.json">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="first-head">
+        <div class="top-details">
+            <span class="Location">Pathanamthitta, Home</span>
+            <span id="entity">Temperature</span>
+            <span id="entityStatus">Normal</span>
+            <span id="entityValue">35</span>
+            <span id="entityMeasure">Celsius</span>
+        </div>
+    </div>
+    <div class="bottom-details">
+        <div class="bottom-box">
+            <input type="date" name="" onchange="getDateValue(this)" id="selectDate">
+            <canvas id="TimeChart" width="0" height="0"></canvas>
+            <div class="timeControl">
+                <button onclick="getSlice(0)" id="leftArray">-6</button>
+                <select name="" id="" onchange="updateAdds(this.value)">
+                    <option value="6">6 Hours</option>
+                    <option value="12">12 Hours</option>
+                    <option value="24">24 Hours</option>
+                </select>
+                <button onclick="getSlice(1)" id="rightArray">+6</button>
+            </div>
+        </div>
+    </div>
+    <script src="Script/script.js?t=479"></script>
+</body>
+
+</html>
