@@ -14,7 +14,7 @@ function setChart(labelV, DataV) {
     chartScales = {
       x: {
         beginAtZero: false,
-        min: 18,
+        min: 10,
         max: 40,
         grid: { drawBorder: false },
       },
